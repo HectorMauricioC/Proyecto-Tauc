@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+     <h:head>
+        <title>TRABAJO A UN CLIC</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="css/index.css"/>
+       <link rel="stylesheet" href="css/registro_empleador.css"/>
+        
+        <link rel="icon" href="images/logos/logo2.png" />
+        <script src="https://kit.fontawesome.com/8d2aecdc46.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body class="home-body">
+        <header>  
+            <nav>
+                <section>
+                    <a href="faces/index.xhtml" class="enlace-logo">
+                        <img src="images/logos/logo.png" alt="Imagen Logo"/>
+                    </a>
+                    <a href="faces/index.xhtml" class="title-tauc">tauc</a>  
+                </section>
+                
+                <ul id="nav_menu">
+                    <li><a href="faces/para_propietarios.xhtml">Para Propietarios</a></li>
+                    <li><a href="faces/para_empleados.xhtml">Para Empleados</a></li>
+                    <li><a href="faces/seleccion_inicio_sesion.xhtml" style="submit" class="button_iniciar">INICIAR SESIÓN</a></li>
+                    <li><a href="faces/seleccion_registro.xhtml" style="submit" class="button_registro">REGISTRARME</a></li>
+                    
+                </ul>
+            </nav>
+                      
+        </header>
+               
+            
+     <main>
+            
+       <div class="container-registro-propietario">
+
+        <img src="images/fotos/fondo_registro.jpg"></img>
+            
+            
+              <div class="main-propietario">  
+                <h1>REGISTRO PROPIETARIO</h1>
+                
+                <p:growl id="msj"/>
+              <h:form class="formulario-registro-empleador">
+                  <p:fieldset>
+                  
+                   <p:panelGrid columns="4">
+                  <p:outputLabel class="label" value="N° Identificación" />
+                  <p:inputText value="${managedBeanEmpleador.empleador.idEmpleador}" placeholder="Ingrese su identifación"/>
+
+                  <p:outputLabel class="label" value="Nombres"/>
+                  <p:inputText value="${managedBeanEmpleador.empleador.nomEmpleador}" placeholder="Ingrese sus nombres"/>
+
+                  <p:outputLabel class="label" value="Apellidos"/>
+                  <p:inputText value="${managedBeanEmpleador.empleador.apeEmpleador}" placeholder="Ingrese sus apellidos"/>
+
+                  <p:outputLabel class="label" value="Sexo"/>
+                  <p:selectOneMenu style="width:200px;" value="${managedBeanEmpleador.empleador.sexoEmpleador}" required="true">
+                      <f:selectItem  itemValue="1" itemLabel="Seleccionar" noSelectionOption="true"/>
+                    <f:selectItem itemValue="Femenino" itemLabel="Femenino"/>
+                    <f:selectItem itemValue="Masculino" itemLabel="Masculino"/>
+                    <f:selectItem itemValue="Otro" itemLabel="Otro"/>
+                  </p:selectOneMenu>
+
+                  <p:outputLabel  class="label" value="Teléfono"/>
+                  <p:inputText  value="${managedBeanEmpleador.empleador.telEmpleador}" placeholder="Ingrese su teléfono"/>
+
+                  <p:outputLabel class="label" value="Correo Electrónico"/>
+                  <p:inputText value="${managedBeanEmpleador.empleador.correo}" placeholder="Ingrese correo electrónico"/>
+
+                  <p:outputLabel class="label" value="Contraseña"/>
+                  <p:password value="${managedBeanEmpleador.empleador.contrasenaE}" placeholder="Ingresa una contraseña"
+                              validatorMessage="Las contraseñas no coinciden" widgetVar="Debil" strongLabel="Fuerte" goodLabel="Bueno"
+                                  match="confirmar" feedback="true" promptLabel="Ingrese una contraseña" />
+
+                  <p:outputLabel class="label" value="Confirmar Contraseña"/>
+                  <p:password id="confirmar" value="${managedBeanEmpleador.empleador.confirmarContrasenaE}" placeholder="Confirmar contraseña"/>
+                  
+                  <p:outputLabel class="label" value=""/>
+                  <p:outputLabel class="label" value=""/>
+                  
+                  <img style="width: 50px; height: 50px;" src="images/iconos/verificar.png"></img>
+                  
+                  <p:commandButton style=" background: #4B9747; border-bottom-color: green; color: black;" class="button_registrop" value="Registrar"  update=" :msj" actionListener="${managedBeanEmpleador.registrar_e()}"/>
+
+
+               </p:panelGrid>
+              </p:fieldset>
+                  <div class="tienes-cuenta">
+                            <a href="login_propietario.xhtml">¿Ya tienes una cuenta?</a>
+                  </div>
+                
+             </h:form>
+                
+                        
+                   </div>
+                 </div>
+          </main>        
+                  
+         <footer>
+            <div class="grupo1">
+                <div class="box">
+                    <img src="images/logos/logo.png"></img>
+                    <u><a href="index.xhtml" class="title">Trabajo a un clic</a></u>
+                </div>
+
+                <div class="box">                   
+                    <h2>Redes Sociales</h2>
+                    <ul class="redes_sociales">
+                        <li><a href="#"><i class="fa fa-brands fa-square-facebook"></i></a>Facebook</li>
+                        <li><a href="#"><i class="fa fa-brands fa-instagram"></i></a>Instagram</li>
+                        <li><a href="#"><i class="fa fa-regular fa-envelope"></i></a>Gmail</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Contactanos</h3>
+                    <div class="numeros">
+                        <a href="#"><i class="fa-fa fa-solid fa-phone"></i></a>
+                        <ul>
+                            <li>3013633307</li>
+                            <li>3148267304</li>
+                            <li>3007600040</li>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="grupo2">
+                <hr></hr>
+                <small>&copy;2022<b> TAUC</b> Aviso de privacidad | Terminos y Condiciones</small>
+
+            </div>
+        </footer>      
+   
+         
+   </h:body>     
+ </html>      
+

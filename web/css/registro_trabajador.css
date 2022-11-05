@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+*{
+margin: 0; 
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+font-family:  'Lora', serif;
+}
+
+body {
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
+nav{
+position: absolute;
+background-color:  #1c401c; /*color nombreado*/
+height: 85px; /*alto*/
+width: 100vw; /*ancho*/
+box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2); /*Sombra*/
+z-index: 300; /* lo que pone el nav encima del video*/
+font-family:  'Lora', serif;
+cursor: pointer; /*agregar manito*/
+justify-content: center; /*centrar palabra*/
+}
+
+section{
+    float: left;
+    display: flex;
+}
+
+.enlace-logo img{
+width: 70px;
+margin-top: 9px;
+margin-left: 20px;
+}
+
+.title-tauc{
+ margin-top: 25px;
+ margin-left: 5px; /*mover palabra a la derecha*/
+ text-decoration: none; /*Quitar subrayado letra por etiqueta a*/
+ font-size: 30px; /*Tamaño de letra*/
+ text-transform: uppercase; /*Colocar la letra en mayuscula*/
+ color: #fff;
+ font-weight: 700;
+ font-style: normal;
+ 
+}
+
+ 
+nav ul{
+    float: right;
+    margin-top: 9px;
+    margin-right: 40px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 70px;
+    margin: 0 8px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 15px;
+    padding: 7px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+  
+     
+}
+
+nav ul li a:hover{ /*Efecto de colocar color al poner cursor encima */
+    color: #398439;
+    /*text-decoration: underline;*/
+}
+ 
+nav .button_iniciar,
+nav .button_registro{
+    
+    left: 87.49%;
+    right: 3.08%;
+    top: 26.3%;
+    bottom: 76.61%;
+    background-color: #398439;
+    border-radius: 10px;
+    z-index: 300;
+    font-family: 'Lora', serif;
+       
+}
+
+nav .button_iniciar:hover,
+nav .button_registro:hover{   
+color: #1c401c;      
+}
+
+
+
+
+.container-registro-trabajador {
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    height: 750px;
+}
+
+.container-registro-trabajador img{
+    width: 100vw;
+    height: 750px;
+}
+
+.main-right {
+    position: absolute;
+    display: grid;
+    background: rgba(0, 0, 0, 0.84);     
+    width: 65vw;
+    height: 520px;
+    margin-top: 160px;
+    margin-left: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2);
+}
+.main-right h1{
+    position: absolute;
+    color: white;
+    margin-top: 25px;
+    margin-left: 255px;
+    font-weight:  bold;
+}
+.formulario-registro-trabajador {
+    justify-content: center;
+    display: grid;
+    margin-top: 20px;
+    padding: 60px 40px;
+    color: white;
+    height: 450px;
+    font-weight:  500;
+    text-align: center;
+}
+
+.button_registrop {
+    background-color:  #20581A;
+    color: black;
+    text-transform: uppercase;
+}
+
+.button_registrop:hover {
+    background-color: green;
+}
+
+/* estilos prime faces */
+
+.ui-widget {
+    text-align: center;
+     font-family: 'Lora', serif;
+}
+
+.ui-selectonemenu label.ui-selectonemenu-label {
+    cursor: pointer;
+    width: 400px;
+}
+
+.ui-selectonemenu .ui-selectonemenu-label {
+    display: block;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: normal;
+    width: 100%;
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger {
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    cursor: pointer;
+    width: 16px;
+    height: 100%;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    padding: 0 3px;
+}
+
+.tienes-cuenta a {
+    position: absolute;
+    margin-top: 20px;
+    color: white;
+    margin-left: -80px;
+    text-decoration: #000;
+ 
+}
+
+.tienes-cuenta a:hover {
+    color: #299B1E;
+    
+}
+
+
+
+
+
+
+
+
+footer{
+    width: 100%;
+    padding: 2px 0px;
+    background: #183B12;
+   
+}
+.grupo1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.box img{
+    width: 130px;
+    margin-left: 150px;
+  
+}
+
+.box .title{
+   
+    margin-left: 110px;
+    max-width: 350px;
+    font-weight: 500;
+    font-size: 20px; 
+    text-transform: uppercase; 
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.box h2{
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+    margin-left: 400px;
+}
+
+.box h3{
+   font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+      
+}
+
+.box a .fa{
+    margin-left: 300px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.box .numeros{
+  display: flex;
+    margin-left: 20px;
+}
+
+.box .redes_sociales{
+    margin-left: 120px;
+}
+
+.box .redes_sociales li{
+    list-style-type: none;
+    margin-bottom: 3px;
+    margin-right: 20px;
+    color:#000;
+    font-size: 12px;
+}
+
+.box .redes_sociales i{
+    margin-right: 10px;
+}
+
+
+.numeros a{
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.numeros ul li {
+    list-style-type: none;
+    margin-right: 70px;
+    font-size: 12px;
+}
+
+.box a .fa-fa{
+   margin-left: 50px;
+   font-size: 25px;
+   color: #fff;
+}
+.grupo2 hr{
+    margin-top: 20px;
+}
+.grupo2{ 
+    justify-content: center;
+    text-align: center;
+}
+
+.grupo2 small{
+    margin-bottom: 10px;
+}

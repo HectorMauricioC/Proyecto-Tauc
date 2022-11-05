@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TRABAJO A UN CLIC</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="css/gestionar_empleador.css"/>
+        <link rel="stylesheet" href="css/inicio_propietario.css"/>
+        
+        <link rel="icon" href="images/logos/logo2.png" />
+        <script src="https://kit.fontawesome.com/8d2aecdc46.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        
+         <header>  
+            <nav>
+                <section>
+                    <a href="index.xhtml" class="enlace-logo">
+                        <img src="images/logos/logo.png" alt="Imagen Logo"/>
+                    </a>
+                    <a href="index.xhtml" class="title-tauc">tauc</a>  
+                </section>
+
+                <ul id="nav_menu">
+                    <li><a href="faces/para_propietarios.xhtml">Para Propietarios</a></li>
+                    <li><a href="faces/para_empleados.xhtml">Para Empleados</a></li>
+                    <li><a href="faces/login_propietario.xhtml" style="submit" class="button_iniciar">INICIAR SESIÓN</a></li>
+                    <li><a href="faces/seleccion_registro.xhtml" style="submit" class="button_registro">REGISTRARME</a></li>
+                </ul>
+            </nav>
+             <div class="header2">
+                <div class="house-icon">
+                    <div class="icon-inicio">
+                        <a href="faces/inicio_propietario.xhtml"><img src="images/iconos/inicio.png"></img></a>
+                        <a class="title-inicio" href="faces/inicio_propietario.xhtml">INICIO</a>
+                    </div>
+                </div>
+                    <div class="foto-perfil-propietario">
+                        <img src="images/fotos/foto_perfil_propietario.jpg"></img>
+                        <a class="text_mi_perfil" href="faces/perfil_propietario.xhtml">MI PERFIL</a>
+                    </div>
+                    <div class="cambiar-clave-propietario">
+                        <a href="faces/cambiar_clave_propietario.xhtml">CAMBIAR CLAVE</a>
+                    </div>
+                 <h:form>
+                    <div class="cerrar-sesion-propietario">
+                        <img src="images/iconos/cerrar-sesion.png"></img>
+                        <h:commandLink value="Cerrar sesion" actionListener="#{managedBeanIngresoPropietario.cerrarsesionp()}" action="faces/index.xhtml"/>
+                    </div>
+                </h:form>
+            </div>
+            </header>
+        
+        <main>
+            <div class="container-gestionar_propietario-p">
+              
+                <div class="side-p">
+                    <img src="images/fotos/menu.png"></img>
+                    <div class="menu-side-p"> <div class="opciones-menu-p ">
+                            <div class="title-menu-p">
+                            <h3>MENÚ</h3>
+                            </div>
+                        <ul>
+                            <div class="opciones-p">
+                            <li><a href="faces/perfil_propietario.xhtml">Mi perfil</a></li> 
+                            <li><a href="faces/publicar_propietario.xhtml">Publicar</a></li> 
+                            <li><a href="faces/Gestionar_publicaciones.xhtml">Mis publicaciones</a></li>
+                             <li><a href="faces/ver_postulados.xhtml">Ver postulados</a></li>
+                            </div>
+                        </ul>
+                        </div>
+                    </div> 
+                </div>
+                
+            
+            
+            
+            
+            <!-- GESTIONAR PUBLICACIONES -->
+            
+        <div class="main-gestionar-publicaciones">
+            
+            <h:form>
+               <p:toolbar>
+                   <p:toolbarGroup>
+                       
+                       <p:commandButton value="Nuevo" icon="ui-icon-plus" style="background-color: #398439; color: black;"  oncomplete="PF('valor').show();"/>
+  
+                   </p:toolbarGroup>       
+               </p:toolbar>
+               </h:form>  
+            
+                        <h:form id="fincas">
+                <p:fieldset>
+                
+                    <p:dataTable var="f" value="#{managedBeanFinca.listaFincas}" paginator="true" rows="5" 
+                             widgetVar="TablaFincaBuscar" style=" font-size: small ;margin-bottom:20px">  
+                  <br></br>
+                <br></br>
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <h:outputText value="Buscar : "/>
+                            <p:inputText id="globalFilter" onkeyup="PF('TablaFincaBuscar').filter()" placeholder="Ingrese la búsqueda" style="width: 150px"/>
+                        
+                   </p:outputPanel>
+               </f:facet>  
+                            
+                <p:column headerText="Código Finca" filterBy="${f.codigoFinca}" filterStyle="whidt:100px" filterMatchMode="contains" >
+                    <h:outputText value="#{f.codigoFinca}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Nombre Finca">
+                        <h:outputText value="${f.nombreFinca}"/>
+                    </p:column>
+                   
+                    <p:column headerText="Vereda">
+                        <h:outputText value="${f.vereda}"/>
+                    </p:column>
+                    <p:column headerText="Tipo Labor">
+                        <h:outputText value="${f.tipoLabor}"/>
+                    </p:column>
+                  <p:column headerText="Modalidad">
+                      <h:outputText value="${f.modalidad}"/>
+                  </p:column>
+                  <p:column headerText="Sueldo">
+                      <h:outputText value="${f.salario}"/>
+                  </p:column>
+                  <p:column headerText="Cantidad trabajadores">
+                      <h:outputText value="${f.cantTrabajadores}"/>
+                  </p:column>
+                     <p:column headerText="Horario Entrada">
+                         <h:outputText value="${f.horarioEntrada}"/>
+                  </p:column>
+                  
+                    <p:column headerText="Horario Salida">
+                        <h:outputText value="${f.horarioSalida}"/>
+                  </p:column>
+                    
+                     <p:column headerText="identificación empleador">
+                         <h:outputText value="${f.idEmpleador}"/>
+                  </p:column>
+                   
+
+                <!--COLUMNA PARA MOSTRAR EL BOTON EDITAR-->
+                 <p:column headerText="Editar">
+                     <p:commandButton icon="ui-icon-pencil" style="width: 45px; margin-left: 10px;  background: #C3EEBA ;" actionListener="${managedBeanFinca.cargardatos(f)}" 
+                                   update=":f" oncomplete="PF('valor').show();"/>
+                  </p:column>
+                <!--COLUMNA PARA MOSTRAR EL BOTON ELIMINAR-->
+                
+                <p:column headerText="Eliminar">
+                   
+                    <p:column headerText="Eliminar">
+                        <p:commandButton icon=" ui-icon-trash" style="width: 40px; height:40px; margin-left: 18px; margin-top: 5px; background-color: #FCBBAF;" actionListener="${managedBeanFinca.eliminar_f(f)}"
+                               update=":fin" oncomplete="PF('validar').show();"/>
+                                     
+                    </p:column> 
+                 </p:column>
+               
+
+                    
+                    
+                </p:dataTable>
+            </p:fieldset>
+         </h:form>
+            
+            <!-- VALIDAR ELIMINAR -->
+             <p:growl id="msje"/>     
+         <p:dialog  widgetVar="validar" showEffect="clip" header="Eliminar Registro" resizable="false" >
+                     <!--P:AJAX PERMITE LLAMAR A UN METODO PARA LIMPIAR EL FORMULARIO-->
+                     <p:ajax event="close" listener="#{managedBeanFinca.limpiar_f()}" update="fin"/> 
+
+        
+        
+            <h:form id="fin">
+                
+                <p:panelGrid columns="4">
+         
+                       <p:outputLabel value="¿Está seguro de eliminar esta publicación?"/>
+                       
+                       <p:commandButton value="SÍ" actionListener="#{managedBeanFinca.eliminar_f(eliminar)}"
+                        update=":fincas  :msje" oncomplete="PF('validar').hide();"/>
+                       
+                       
+                       <p:commandButton value="no" action="#"/>
+                       </p:panelGrid>
+            </h:form>
+            </p:dialog>          
+                      
+              
+              <!--FORMULARIO PARA INSERTAR NUEVA OFERTA-->
+              <p:growl id="msj"/>     
+         <p:dialog  widgetVar="valor" showEffect="clip" header="Nuevo Registro" resizable="false" >
+                     <!--P:AJAX PERMITE LLAMAR A UN METODO PARA LIMPIAR EL FORMULARIO-->
+                     <p:ajax event="close" listener="#{managedBeanFinca.limpiar_f()}" update="f"/> 
+
+        
+        
+            <h:form id="f">
+                
+                <p:panelGrid columns="4">
+         
+                       <p:outputLabel value="Código Finca"/>
+                       <p:inputText value="${managedBeanFinca.finca.codigoFinca}" placeholder="Código finca"></p:inputText>
+                       
+                       <p:outputLabel value="Nombre Finca"/>
+                       <p:inputText value="#{managedBeanFinca.finca.nombreFinca}" placeholder="Andrómeda"></p:inputText>
+                       
+                       <p:outputLabel value="Vereda"/>                                    
+                       <p:inputText value="#{managedBeanFinca.finca.vereda}" placeholder="Nombre de vereda"/> 
+                       
+                       <p:outputLabel value="Tipo Labor"/>
+                       <p:inputText  value="#{managedBeanFinca.finca.tipoLabor}" placeholder="Recolector de café"/> 
+                       
+                       <p:outputLabel value="Modalidad a trabajo"/>
+                       <p:inputText value="#{managedBeanFinca.finca.modalidad}" placeholder="Al día/Por Contrato"/> 
+                       
+                       <p:outputLabel value="Salario"/>
+                       <p:inputText value="#{managedBeanFinca.finca.salario}" placeholder="Salario"/> 
+                       
+                       <p:outputLabel value="Cantidad Trabajadores"/>
+                       <p:inputText value="#{managedBeanFinca.finca.cantTrabajadores}" placeholder="Cantidad Trabajadores"/> 
+                       
+                       <p:outputLabel value="Horario Entrada"/>
+                       <p:inputText value="#{managedBeanFinca.finca.horarioEntrada}" placeholder="Hora Entrada">
+                           <f:convertDateTime pattern="HH:mm" />
+                       </p:inputText> 
+                       
+                       <p:outputLabel value="Horario Salario"/>
+                       <p:inputText value="#{managedBeanFinca.finca.horarioSalida}" placeholder="Hora Salida">
+                           <f:convertDateTime pattern="HH:mm" />
+                       </p:inputText> 
+                       
+                       <p:outputLabel value="Identificación Empleador"/>
+                       <p:inputText value="#{managedBeanFinca.empleador.idEmpleador}" placeholder="Identificación propietario"/>
+                       
+                       <p:commandButton value="Guardar" actionListener="#{managedBeanFinca.nuevo_f()}"
+                     update=":fincas  :msj" oncomplete="PF('valor').hide();"                   
+                     rendered="#{managedBeanFinca.finca.codigoFinca!=0}"/>  
+                  </p:panelGrid>
+            </h:form>
+            </p:dialog>
+        </div>
+       </div>   
+        </main>
+        
+        
+        
+        
+          
+           <footer>
+            <div class="grupo1">
+                <div class="box">
+                    <img src="images/logos/logo.png"></img>
+                    <a href="index.xhtml" class="title">Trabajo a un clic</a>
+                </div>
+
+                <div class="box">                   
+                    <h2>Redes Sociales</h2>
+                    <ul class="redes_sociales">
+                        <li><a href="#"><i class="fa fa-brands fa-square-facebook"></i></a>Facebook</li>
+                        <li><a href="#"><i class="fa fa-brands fa-instagram"></i></a>Instagram</li>
+                        <li><a href="#"><i class="fa fa-regular fa-envelope"></i></a>Gmail</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Desarrolladores</h3>
+                    <div class="numeros">
+                        <a href="#"><i class="fa-fa fa-solid fa-user"></i></a>
+                        <ul>
+                            <li>Melissa Aguirre Galvis</li>
+                            <li>Hector Cano Londoño</li>
+                            <li>Gina Xiomara Pineda Marin</li>
+                            <li>Maria José Zapata Carvajal</li>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="grupo2">
+                <hr></hr>
+                <small>&copy;2022<b> TAUC</b> Aviso de privacidad | Terminos y Condiciones</small>
+
+            </div>
+        </footer>
+    </h:body>
+</html>
+

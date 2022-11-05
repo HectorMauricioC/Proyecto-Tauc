@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+:root {
+    /* colores */
+    --green-dark: #1c401c;
+}
+
+*{
+margin: 0; 
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+
+}
+
+body {
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
+nav{
+position: absolute;
+background-color: rgba(0,0,0,0.7); /*color nombreado*/
+height: 70px; /*alto*/
+width: 100vw; /*ancho*/
+box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2); /*Sombra*/
+z-index: 300; /* lo que pone el nav encima del video*/
+font-family:  'Lora', serif;
+cursor: pointer; /*agregar manito*/
+justify-content: center; /*centrar palabra*/
+}
+
+section{
+    float: left;
+    display: flex;
+}
+
+.enlace-logo img{
+width: 70px;
+margin-top: 1px;
+margin-left: 20px;
+}
+
+.title-tauc{
+ margin-top: 15px;
+ margin-left: 5px; /*mover palabra a la derecha*/
+ text-decoration: none; /*Quitar subrayado letra por etiqueta a*/
+ font-size: 30px; /*Tamaño de letra*/
+ text-transform: uppercase; /*Colocar la letra en mayuscula*/
+ color: #fff;
+ font-weight: 700;
+ font-style: normal;
+ 
+}
+
+ 
+nav ul{
+    float: right;
+    margin-right: 20px;
+    font-family: 'Lora', serif;
+   font-weight: 700;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 70px;
+    margin: 0 8px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 15px;
+    padding: 7px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+  
+     
+}
+
+nav ul li a:hover{ /*Efecto de colocar color al poner cursor encima */
+    color: #398439;
+    /*text-decoration: underline;*/
+}
+ 
+nav .button_iniciar,
+nav .button_registro{
+    
+    left: 87.49%;
+    right: 3.08%;
+    top: 16.3%;
+    bottom: 76.61%;
+    background-color: #398439;
+    border-radius: 10px;
+    z-index: 300;
+    font-family: 'Lora', serif;
+       
+}
+
+nav .button_iniciar:hover,
+nav .button_registro:hover{   
+color: #1c401c;      
+}
+
+
+.video-container{
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  z-index: 1;
+   
+}
+
+ .video {
+  left: 50%;
+  top: 80%; 
+}
+
+.video {
+  z-index: 9999;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  
+}
+
+
+/*parte de la description*/ 
+.description{
+    position: relative;
+    background-color: var(--green-dark);
+    padding: 40px 0px;
+    
+}
+
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 600px 600px;
+    grid-templete-rows: 200px 200px;
+    place-content: center;
+    overflow-x: hidden;
+}
+
+
+.contenedor-item{
+    margin: 15px 0px;
+    padding: 30px 30px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.contenedor-item:hover{
+    background-color: #2b542c;
+}
+
+
+.icon{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+}
+
+.icon img {
+  max-width: 100%;
+}
+
+.text {
+  display: inline-block;
+  
+}
+
+.text h4 {
+  font-family: 'Lora', serif;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 22px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+.text p {
+  display: block;
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+  font-family: 'Lora', serif;
+  color: #bbb;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: justify;
+  
+}
+
+
+
+/*Section de la historia*/
+
+.contenedor-historia{
+    background-image: url(../images/fotos/cafe.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /*Se fija la imagen y no se desplaza*/
+    background-size: cover;
+    background-position: center center;   
+}
+.contenedor-historia .historia{
+  background-color: rgba(0,0,0,0.8);
+  padding: 42px; 
+  color: #fff;
+  margin-left: 700px;
+  text-align: justify;
+  
+}
+
+.contenedor-historia .historia h2{
+   margin-top: 0px;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px; 
+  justify-content: center; /*centrar palabra*/
+}
+
+.contenedor-historia .historia p{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;  
+}
+
+
+
+footer{
+    width: 100%;
+    padding: 2px 0px;
+    background: #183B12;
+   
+}
+.grupo1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.box img{
+    width: 130px;
+    margin-left: 150px;
+  
+}
+
+.box .title{
+   
+    margin-left: 110px;
+    max-width: 350px;
+    font-weight: 500;
+    font-size: 20px; 
+    text-transform: uppercase; 
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.box h2{
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+    margin-left: 400px;
+}
+
+.box h3{
+   font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+      
+}
+
+.box a .fa{
+    margin-left: 300px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.box .numeros{
+  display: flex;
+    margin-left: 20px;
+}
+
+.box .redes_sociales{
+    margin-left: 120px;
+}
+
+.box .redes_sociales li{
+    list-style-type: none;
+    margin-bottom: 3px;
+    margin-right: 20px;
+    color:#000;
+    font-size: 12px;
+}
+
+.box .redes_sociales i{
+    margin-right: 10px;
+}
+
+
+.numeros a{
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.numeros ul li {
+    list-style-type: none;
+    margin-right: 70px;
+    font-size: 12px;
+}
+
+.box a .fa-fa{
+   margin-left: 50px;
+   font-size: 25px;
+   color: #fff;
+}
+.grupo2 hr{
+    margin-top: 20px;
+}
+.grupo2{ 
+    justify-content: center;
+    text-align: center;
+}
+
+.grupo2 small{
+    margin-bottom: 10px;
+}
+
+

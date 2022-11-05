@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <h:head>
+         <title>TRABAJO A UN CLIC</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css/publicar_propietario.css"/>
+        
+        <link rel="icon" href="images/logos/logo2.png" />
+        <script src="https://kit.fontawesome.com/8d2aecdc46.js" crossorigin="anonymous"></script>
+        
+    </h:head>
+    <h:body>
+        
+        <header>
+                <div class="item item-1">
+                <nav>
+                <section>
+                    <a href="faces/index.xhtml" class="enlace-logo">
+                        <img src="images/logos/logo.png" alt="Imagen Logo"/>
+                    </a>
+                    <a href="faces/index.xhtml" class="title-tauc">tauc</a>  
+                </section>
+                </nav>
+                </div> 
+            <div class="header2">
+                <div class="house-icon">
+                    <div class="icon-inicio">
+                        <a href="faces/index.xhtml"><img src="images/iconos/inicio.png"></img></a>
+                        <a class="title-inicio" href="index.xhtml">INICIO</a>
+                    </div>
+                </div>
+                    <div class="foto-perfil-empleado">
+                        <img src="images/fotos/foto_perfil_propietario.jpg"></img>
+                        <a href="faces/perfil_propietario.xhtml">MI PERFIL</a>
+                    </div>
+                    <div class="cambiar-clave-empleado">
+                        <a href="faces/cambiar_clave.xhtml">CAMBIAR CLAVE</a>
+                    </div>
+                    <div class="cerrar-sesion-empleado">
+                        <img src="images/iconos/cerrar-sesion.png"></img>
+                        <a href="faces/index.xhtml">CERRAR SESIÓN</a>
+                    </div>
+                    
+
+            </div>
+        </header>
+         
+        <main>
+             
+            <div class="container-inicio_propietario">
+              
+                <div class="side">
+                    <img src="images/fotos/hojas.png"></img>
+                    <div class="menu-side"> <div class="opciones-menu ">
+                            <div class="title-menu">
+                            <h3>MENÚ</h3>
+                            </div>
+                        <ul>
+                            <div class="opciones">
+                            <li><a href="faces/perfil_propietario.xhtml">Mi perfil</a></li> 
+                            <li><a href="faces/publicar_propietario.xhtml">Publicar</a></li> 
+                            <li><a href="faces/gestionar_publicaciones.xhtml">Mis publicaciones</a></li>
+                             <li><a href="faces/ver_postulados.xhtml">Ver postulados</a></li>
+                            </div>
+                        </ul>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="container-publicar-propietario">
+                    <div class="formulario-publicacion-p">
+                        <h2>DATOS DE LA FINCA</h2>
+                  
+                     <p:growl id="msj"/>
+                     
+                     <div class="grid-main-propietario">
+                        <h:form class="formulario-principal-publicarp">
+                            <p:panelGrid columns="3">
+                            <!-- Nombre finca -->
+                            
+                            <p:outputLabel value="Código finca "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.codigoFinca}"></p:inputText>
+                            
+                            <p:outputLabel value=""></p:outputLabel> 
+                            
+                            <p:outputLabel value="Nombre Finca "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.nombreFinca}"></p:inputText>
+                            <!-- Vereda -->
+                            <p:outputLabel value="Vereda "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.vereda}"></p:inputText>
+                            <!-- Tipo Labor -->
+                            <p:outputLabel value="Tipo Labor "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.tipoLabor}"></p:inputText>
+                            <!-- Modalidad  -->
+                            <p:outputLabel value="Modalidad"></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.modalidad}"></p:inputText>
+                            <!-- Sueldo  -->
+                            <p:outputLabel value="Sueldo "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.salario}"></p:inputText>
+                            <!-- Cantidad trabajadores -->
+                            <p:outputLabel value="Cantidad Trabajadores"></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.cantTrabajadores}"></p:inputText>
+                            <!-- Horario Entrads  -->
+                            <p:outputLabel value="Horario Entrada "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.horarioEntrada}">
+                            <f:convertDateTime pattern="HH:mm" />
+                            </p:inputText>
+                            <!-- Horario salida  -->
+                            <p:outputLabel value="Horario Salida: "></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.finca.horarioSalida}">
+                            <f:convertDateTime pattern="HH:mm" />
+                            </p:inputText>
+                            
+                            <p:outputLabel value="" />
+                            <p:outputLabel value="Identificación empleador"></p:outputLabel> 
+                            <p:inputText value="${managedBeanFinca.empleador.idEmpleador}"></p:inputText>
+                            <!--Boton Guardar-->
+                            <p:commandButton style=" background: #4B9747; border-bottom-color: green; color: black;" value="PUBLICAR" class="button-publicar" update=" :msj" 
+                                             actionListener="${managedBeanFinca.registrar_f()}"/>
+                          </p:panelGrid>
+                        </h:form>
+                       
+                      <div class="foto-perfil-main">
+                          <img class="icon-edit-p" src="images/iconos/editar.png"></img>
+                          <img class="foto-finca" src="images/fotos/finca.jpg"></img>
+                      </div>
+                     </div>
+                    </div>
+                </div>
+            </div>  
+          
+        </main>
+        
+         <footer>
+            <div class="grupo1">
+                <div class="box">
+                    <img src="images/logos/logo.png"></img>
+                    <a href="index.xhtml" class="title">Trabajo a un clic</a>
+                </div>
+
+                <div class="box">                   
+                    <h2>Redes Sociales</h2>
+                    <ul class="redes_sociales">
+                        <li><a href="#"><i class="fa fa-brands fa-square-facebook"></i></a>Facebook</li>
+                        <li><a href="#"><i class="fa fa-brands fa-instagram"></i></a>Instagram</li>
+                        <li><a href="#"><i class="fa fa-regular fa-envelope"></i></a>Gmail</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Desarrolladores</h3>
+                    <div class="numeros">
+                        <a href="#"><i class="fa-fa fa-solid fa-user"></i></a>
+                        <ul>
+                            <li>Melissa Aguirre Galvis</li>
+                            <li>Hector Cano Londoño</li>
+                            <li>Gina Xiomara Pineda Marin</li>
+                            <li>Maria José Zapata Carvajal</li>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="grupo2">
+                <hr></hr>
+                <small>&copy;2022<b> TAUC</b> Aviso de privacidad | Terminos y Condiciones</small>
+
+            </div>
+        </footer>
+        
+    </h:body>
+</html>
+

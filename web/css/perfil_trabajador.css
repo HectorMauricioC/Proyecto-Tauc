@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+
+*{
+margin: 0; 
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+overflow-x: hidden;
+
+}
+
+nav{
+background-color: #467A40  ; /*color nombreado*/
+height: 70px; /*alto*/
+width: 100vw; /*ancho*/
+box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2); /*Sombra*/
+z-index: 300; /* lo que pone el nav encima del video*/
+font-family:  'Lora', serif;
+cursor: pointer; /*agregar manito*/
+justify-content: center; /*centrar palabra*/
+overflow-y: hidden;
+}
+
+section{
+    float: left;
+    display: flex;
+}
+
+.enlace-logo img{
+width: 70px;
+margin-top: 2px;
+margin-left: 20px;
+}
+
+.title-tauc{
+ margin-top: 20px;
+ margin-left: 5px; /*mover palabra a la derecha*/
+ text-decoration: none; /*Quitar subrayado letra por etiqueta a*/
+ font-size: 30px; /*Tamaño de letra*/
+ text-transform: uppercase; /*Colocar la letra en mayuscula*/
+ color: #000;
+ font-weight: 700;
+ font-style: normal;
+ 
+}
+
+a{
+    color: black;
+}
+/* ---- HEADER 2 ----*/
+.header2-propietario {
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+    margin-top: 70px;
+    background-color: #74B16D  ;
+    height: 70px; /*alto*/
+    width: 100vw;
+   
+}
+
+.header-right img{
+    margin-top: 20px;
+    width: 40px;
+    padding: 0px 0px;
+    margin-left: 45px;
+}
+
+.inicio-title{
+    position: absolute;
+    color: #000;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.inicio-title a:hover{
+    color:  #20581A;
+}
+
+
+.cambiarclave-propie {
+    color: #000;
+    margin-left: 35px;
+    margin-top: 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cambiarclave-propie a:hover {
+    color:  #20581A;
+}
+
+.cerrarsesion-propie img  {
+    width: 20px;
+    margin-top: 26px;
+    margin-left: 1px;
+}
+
+.cerrarsesion-propie a{
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 5px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cerrarsesion-propie a:hover {
+    color:  #20581A;
+}
+
+/* MAIN PERFIL PROPIETARIO */
+
+.main-perfil-trabajador {
+   background: rgba(173, 250, 153, 0.68);
+    width: 100vw;
+}
+
+.formulario-perfil-trabajador {
+    position: absolute;
+    text-align: center;
+    width: 880px;
+    height: 490px;
+    margin-top: 55px;
+    margin-left: 60px;
+    background-color: #FAFEDB;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+    
+}
+
+.formulario-perfil-trabajador h2{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.grid-main {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+
+.formulario-principal {
+    font-size:16px;
+    position: relative;
+    bottom: 10px;
+    padding: 20px 20px;
+    margin-top:20px;
+    margin-left: 5px;
+}
+
+.icon-edit {
+    position: absolute;
+    width: 20px;
+    top: 10%;
+    left: 93%;
+    margin-bottom: 10px;
+}
+
+.foto-trabajador{
+    margin-top: 50px;
+    margin-left: -20px;
+    width: 180px;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+}
+
+.button-guardar a{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 400px;
+    background: rgba(24, 59, 24, 0.91);
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.7);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+    color: white;
+}
+
+.button-guardar:hover {
+    background-color: #3F7C39 ;
+}
+
+
